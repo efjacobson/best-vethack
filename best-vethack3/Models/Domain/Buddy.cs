@@ -10,6 +10,7 @@ namespace best_vethack3.Models.Domain
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string PhoneNumber { get; set; }
         public int Age { get; set; }
         public int IsActive { get; set; }
         public string Branch { get; set; }

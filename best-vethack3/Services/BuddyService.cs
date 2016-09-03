@@ -31,6 +31,7 @@ namespace best_vethack3.Services
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.AddWithValue("@firstName", Buddy.FirstName);
                 sqlCommand.Parameters.AddWithValue("@lastName", Buddy.LastName);
+                sqlCommand.Parameters.AddWithValue("@phoneNumber", Buddy.PhoneNumber);
                 sqlCommand.Parameters.AddWithValue("@age", Buddy.Age);
                 sqlCommand.Parameters.AddWithValue("@isActive", Buddy.IsActive);
                 sqlCommand.Parameters.AddWithValue("@branch", Buddy.Branch);
@@ -87,6 +88,7 @@ namespace best_vethack3.Services
                     buddy.Id = dataReader.GetInt32(colpos++);
                     buddy.FirstName = dataReader.GetString(colpos++);
                     buddy.LastName = dataReader.GetString(colpos++);
+                    buddy.PhoneNumber = dataReader.GetString(colpos++);
                     buddy.Age = dataReader.GetInt32(colpos++);
                     buddy.IsActive = dataReader.GetInt32(colpos++);
                     buddy.Branch = dataReader.GetString(colpos++);
@@ -141,6 +143,7 @@ namespace best_vethack3.Services
                     buddy.Id = dataReader.GetInt32(colpos++);
                     buddy.FirstName = dataReader.GetString(colpos++);
                     buddy.LastName = dataReader.GetString(colpos++);
+                    buddy.PhoneNumber = dataReader.GetString(colpos++);
                     buddy.Age = dataReader.GetInt32(colpos++);
                     buddy.IsActive = dataReader.GetInt32(colpos++);
                     buddy.Branch = dataReader.GetString(colpos++);
