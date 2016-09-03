@@ -5,20 +5,25 @@ using System.Web;
 
 namespace best_vethack3.Models.Response
 {
+
     public class ErrorResponse : BaseResponse
     {
-        public List<string> Errors { get; set; }
+        public List<String> Errors { get; set; }
 
-        public ErrorResponse(string errorMessage)
+        public ErrorResponse(string errMsg)
         {
-            Errors.Add(errorMessage);
-            IsSuccessful = false;
+            Errors = new List<string>();
+
+            Errors.Add(errMsg);
+            this.IsSuccessFul = false;
         }
 
-        public ErrorResponse(IEnumerable<string> errorMessages)
+        public ErrorResponse(IEnumerable<String> errMsg)
         {
-            Errors.AddRange(errorMessages);
-            IsSuccessful = false;
+            Errors = new List<string>();
+
+            Errors.AddRange(errMsg);
+            this.IsSuccessFul = false;
         }
     }
 }

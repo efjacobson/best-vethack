@@ -1,0 +1,70 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MessagingTestView</title>
+</head>
+<body>
+    <form id="contactForm">
+        <div id="signature" class="row" >
+            <label for="name">Your name:</label><br />
+            <input id="signature" class="input" name="signature" type="text" placeholder="optional" value="" size="30" /><br />
+        </div>
+        <div id="phoneNumberTo" class="row" >
+            <label >Phone Number</label><br />
+            <input id="phoneNumberTo" class="input" type="tel" name="phoneNumberTo" placeholder="optional" value="" size="30" /><br />
+        </div>
+        <div id="messageBody" class="row">
+            <label>Your message:</label><br />
+            <textarea id="messageBody" name="messageBody"class="input" rows="7" cols="30"></textarea><br />
+        </div>
+        <input id="submitButton"  type="button"  value="Send email" />
+    </form>				
+</body>
+</html>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        console.log("ready!");
+        $("#submitButton").on("click", getInfo);
+    });
+    
+
+
+    var getInfo = function () {
+        console.log($("#contactForm").serialize());
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:52570/Api/messaging",
+            data: $("#contactForm").serialize(),
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            dataType: "json",
+            success: successFunc,
+            error: errorFunc
+        });
+    }
+
+        
+        function successFunc(data, status) {     
+            console.log(data);
+        }
+
+        function errorFunc() {
+            console.log('error');
+        }
+   
+       
+</script>
