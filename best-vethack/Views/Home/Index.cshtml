@@ -2,6 +2,12 @@
     ViewBag.Title = "Home Page";
 }
 
+@section Styles {
+
+<link href="~/Content/cardStyle.css" rel="stylesheet" />
+        
+    }
+
 <div class="jumbotron">
     <h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
@@ -29,3 +35,81 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row company-container">
+        <div class="col-lg-3">
+            <div class="contact-box center-version employeeCard">
+                <a href="profile.html">
+                    <img alt="image" class="img-rounded" src="/Images/blk_female_soldier_salute_tight_diag_arm.jpg">
+                    <h3 class="m-b-xs"><strong>Janet Carton</strong></h3>
+                    <div class="font-bold branch">42</div>
+                    <address class="m-t-md">
+                        <strong>Air Force</strong><br>
+                        <div>Sergeant</div>
+                        <div>15 Years Served</div>
+                        <div>Retired</div>
+                        <div id="city">San Diego, CA</div><br>
+                    </address>
+                </a>
+                <div class="contact-box-footer">
+                    <div class="m-b-md">
+                        <a class="btn btn-primary"> Message </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="contact-box center-version employeeCard">
+                <a href="profile.html">
+                    <img alt="image" class="img-rounded" src="/Images/u-s-army.jpg">
+                    <h3 class="m-b-xs"><strong>Tony Stark</strong></h3>
+                    <div class="font-bold branch">36</div>
+                    <address class="m-t-md">
+                        <strong>Marine Corp</strong><br>
+                        <div>Lieutenant</div>
+                        <div>10 Years Served</div>
+                        <div>Active</div>
+                        <div id="city">Austin, TX</div><br>
+                    </address>
+                </a>
+                <div class="contact-box-footer">
+                    <div class="m-b-md">
+                        <a class="btn btn-primary"> Message </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+            $(document).ready(function () {
+                console.log(ready);
+            });
+</script>
+
+<script type="text/template" id="employeesTemplate">
+    <div class="col-lg-3">
+        <div class="contact-box center-version employeeCard">
+            <a href="profile.html">
+                <img alt="image" class="img-circle" src="/Themes/Inspinia_MVC5/Images/a6.jpg">
+                <h3 class="m-b-xs" id="mentorName"><strong>Janet Carton</strong></h3>
+                <div class="font-bold age">23</div>
+                <address class="m-t-md">
+                    <div id="branch"><strong>Air Force</strong></div><br>
+                    <div id="rank">Sergeant</div>
+                    <div id="yearsServed">15 Years Served</div>
+                    <div id="status">Retired</div>
+                    <div id="location">San Diego, CA</div><br>
+                </address>
+            </a>
+            <div class="contact-box-footer">
+                <div class="m-b-md">
+                    <a class="btn btn-primary"> Message </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

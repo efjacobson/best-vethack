@@ -197,10 +197,16 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cardStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\blk_female_soldier_salute_tight_diag_arm.jpg" />
+    <Content Include="Images\maxresdefault.jpg" />
+    <Content Include="Images\spoehr-apr-2014-img5.png" />
+    <Content Include="Images\u-s-army.jpg" />
+    <Content Include="Images\us-army-379036_960_720.jpg" />
     <Content Include="Photos\20160701__02TCAVETw-1.jpg" />
     <Content Include="Photos\3 soldiers left, black box right.jpg" />
     <Content Include="Photos\3-Soldier-With-Black-lab.jpg" />

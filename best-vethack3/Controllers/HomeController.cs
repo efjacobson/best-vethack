@@ -22,7 +22,7 @@ namespace best_vethack3.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact Buddies.";
 
             return View();
         }

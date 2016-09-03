@@ -1,17 +1,167 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
+
+<link href="~/Content/cardStyle.css" rel="stylesheet" />
+
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row mentorContainer">
+        <div class="col-lg-3">
+            <div class="contact-box center-version mentorCard">
+                <a href="profile.html">
+                    <img alt="image" class="img-rounded" src="/Images/blk_female_soldier_salute_tight_diag_arm.jpg">
+                    <h3 class="m-b-xs"><strong>Janet Carton</strong></h3>
+                    <div class="font-bold branch">42</div>
+                    <address class="m-t-md">
+                        <strong>Air Force</strong><br>
+                        <div>Sergeant</div>
+                        <div>15 Years Served</div>
+                        <div>Retired</div>
+                        <div>Current Occupation</div>
+                        <div id="city">San Diego, CA</div><br>
+                    </address>
+                </a>
+                <div class="contact-box-footer">
+                    <div class="m-b-md">
+                        <a class="btn btn-primary"> Message </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="contact-box center-version mentorCard">
+                <a href="profile.html">
+                    <img alt="image" class="img-rounded" src="/Images/u-s-army.jpg">
+                    <h3 class="m-b-xs"><strong>Tony Stark</strong></h3>
+                    <div class="font-bold branch">36</div>
+                    <address class="m-t-md">
+                        <strong>Marine Corp</strong><br>
+                        <div>Lieutenant</div>
+                        <div>10 Years Served</div>
+                        <div>Active</div>
+                        <div>Social Worker</div>
+                        <div id="city">Austin, TX</div><br>
+                    </address>
+                </a>
+                <div class="contact-box-footer">
+                    <div class="m-b-md">
+                        <a class="btn btn-primary"> Message </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+@section Scripts {
+
+    <script>
+
+        selectAll = function (onSuccess, onError) {
+            var url = "/api/buddy";
+
+            var settings = {
+                cache: false
+                , dataType: "json"
+                , success: onSuccess
+                , error: onError
+                , type: "GET"
+            };
+
+            $.ajax(url, settings);
+
+        }
+
+        function onError(jqXHR) {
+            console.log(jqXHR);
+        }
+
+        function onSuccess(data) {
+            var arrayOfMentors = data;
+            appendToDom(arrayOfMentors);
+        }
+
+        selectAll(onSuccess, onError);
+
+        function getMentorSuccess(data) {
+            var arrayOfMentors = data.items;
+            appendToDom(arrayOfMentors);
+        }
+
+        function appendToDom(array) {
+            for (var i = 0; i < array.length; i++) {
+                var $mentor = populateTemplate(array[i]);
+                $('.mentorContainer').append($mentor);
+            }
+        }
+
+        function populateTemplate(mentor) {
+            var $mentor = $($('#mentorsTemplate').html());
+            $mentor.attr('data-id', mentor.id);
+            $mentor.find('#mentorName').text(mentor.FirstName + " " + mentor.LastName);
+            $mentor.find('.age').text(mentor.Age);
+            $mentor.find('#branch').text(mentor.Branch);
+            $mentor.find('#rank').text(mentor.Rank);
+            $mentor.find('#yearsServed').text(mentor.YearsServed + " Years Served");
+            if (mentor.IsActive == 1) {
+                $mentor.find('#status').text("Active");
+            } else {
+                $mentor.find('#status').text("Retired");
+            }
+            $mentor.find('#currentOccupation').text(mentor.CurrentOccupation);
+            $mentor.find('#location').text(mentor.Location);
+            setRandomPicture($mentor);
+            return $mentor;
+        }
+
+        function setRandomPicture($mentor) {
+            var caseNumber = Math.floor((Math.random() * 5) + 1);
+            switch (caseNumber) {
+                case 1:
+                    $mentor.find('.mentorCard > img').attr('src', '/Images/blk_female_soldier_salute_tight_diag_arm.jpg');
+                    break;
+                case 2:
+                    $mentor.find('.mentorCard > img').attr('src', '/Images/maxresdefault.jpg');
+                    break;
+                case 3:
+                    $mentor.find('.mentorCard > img').attr('src', '/Images/spoehr-apr-2014-img5.png');
+                    break;
+                case 4:
+                    $mentor.find('.mentorCard > img').attr('src', '/Images/u-s-army.jpg');
+                    break;
+                case 5:
+                    $mentor.find('.mentorCard > img').attr('src', '/Images/us-army-379036_960_720.jpg');
+                    break;
+            }
+        }
+    </script>
+
+    <script type="text/template" id="mentorsTemplate">
+        <div class="col-lg-3">
+            <div class="contact-box center-version mentorCard">
+                <a href="profile.html">
+                    <img alt="image" class="img-circle" src="/Themes/Inspinia_MVC5/Images/a6.jpg">
+                    <h3 class="m-b-xs" id="mentorName"><strong>Janet Carton</strong></h3>
+                    <div class="font-bold age">23</div>
+                    <address class="m-t-md">
+                        <div id="branch"><strong>Air Force</strong></div><br>
+                        <div id="rank">Sergeant</div>
+                        <div id="yearsServed">15 Years Served</div>
+                        <div id="status">Retired</div>
+                        <div id="currentOccupation">Chef</div>
+                        <div id="location">San Diego, CA</div><br>
+                    </address>
+                </a>
+                <div class="contact-box-footer">
+                    <div class="m-b-md">
+                        <a class="btn btn-primary"> Message </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+}
