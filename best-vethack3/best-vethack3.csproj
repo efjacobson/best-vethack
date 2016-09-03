@@ -181,6 +181,7 @@
     <Compile Include="Controllers\Api\BuddyApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -188,6 +189,7 @@
     <Compile Include="Models\Domain\Buddy.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ProfileViewModel.cs" />
     <Compile Include="Models\Response\BaseResponse.cs" />
     <Compile Include="Models\Response\ErrorResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -365,6 +367,7 @@
     <Content Include="Theme - Oxygen\template\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Theme - Oxygen\template\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Theme - Oxygen\template\sendemail.php" />
+    <Content Include="Views\Profile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
