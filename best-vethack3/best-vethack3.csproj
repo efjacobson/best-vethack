@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="crypto, Version=1.8.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.8.0\lib\net45\crypto.dll</HintPath>
       <Private>True</Private>
@@ -57,6 +61,32 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.7.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.7.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.7.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=6.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.6.2.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -68,6 +98,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Spatial, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.7.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -207,6 +241,7 @@
     <Compile Include="Controllers\Api\TwilioApiMessaging.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -215,6 +250,7 @@
     <Compile Include="Models\Domain\TwilioMessaging.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ProfileViewModel.cs" />
     <Compile Include="Models\Response\BaseResponse.cs" />
     <Compile Include="Models\Response\ErrorResponse.cs" />
     <Compile Include="Models\Response\SuccessResponse.cs" />
@@ -230,47 +266,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Photos\20160701__02TCAVETw-1.jpg" />
-    <Content Include="Photos\3 soldiers left, black box right.jpg" />
-    <Content Include="Photos\3-Soldier-With-Black-lab.jpg" />
-    <Content Include="Photos\3rd-bn-mtt-group-with-chaplain.jpg" />
-    <Content Include="Photos\51355697.jpg" />
-    <Content Include="Photos\516f2b33e67e7.image.jpg" />
-    <Content Include="Photos\55872662.jpg" />
-    <Content Include="Photos\56609a28631da.image.jpg" />
-    <Content Include="Photos\590705486.jpg" />
-    <Content Include="Photos\6578035.JPG" />
-    <Content Include="Photos\74359440.jpg" />
-    <Content Include="Photos\7889242.jpg" />
-    <Content Include="Photos\98305204336643256_NfI20QW7_c.jpg" />
-    <Content Include="Photos\army.mil-103424-2011-03-29-110308 %281%29.jpg" />
-    <Content Include="Photos\bigstock-A-Veteran-Doesn-t-Forget-4138611.jpg" />
-    <Content Include="Photos\blk female soldier salute tight diag arm.jpg" />
-    <Content Include="Photos\body-armor.jpg" />
-    <Content Include="Photos\examing_veterans_and_their_inclinations_for_substance_abuse_coverimage.png" />
-    <Content Include="Photos\F-Inqueue-SR-StoryArchive-Coming-Home-Veteran-C-Mork-jpg-1024x835.jpg" />
-    <Content Include="Photos\getthumb.jpg" />
-    <Content Include="Photos\helmet and boots monochrome.jpg" />
-    <Content Include="Photos\if_you_are_a_veteran_car_magnet_10_x_3.jpg" />
-    <Content Include="Photos\image.jpg" />
-    <Content Include="Photos\L-VetsCrisis.jpg" />
-    <Content Include="Photos\lila-image-1024x683.jpg" />
-    <Content Include="Photos\MTI4OTkzMjQwOTI5NTcyMTE0.jpg" />
-    <Content Include="Photos\ows_141549205066091.jpg" />
-    <Content Include="Photos\r960-4ac249345d573b1c2917d2f51d8c5702.jpg" />
-    <Content Include="Photos\silhouette against flag.jpg" />
-    <Content Include="Photos\Solid stars with dogtags in corner.jpg" />
-    <Content Include="Photos\sp6O3.So.91.jpeg" />
-    <Content Include="Photos\tired-soldier.jpg" />
-    <Content Include="Photos\Two-Women-Veterans.jpg" />
-    <Content Include="Photos\umpcat11.jpg" />
-    <Content Include="Photos\us-veterans-military-families.jpg" />
-    <Content Include="Photos\Veteran Suicide.JPG" />
-    <Content Include="Photos\veterans-jumbo.jpg" />
-    <Content Include="Photos\women servin in afghanistant.jpg" />
-    <Content Include="Photos\womenvets3.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\vetchat - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -394,6 +392,7 @@
     <Content Include="Theme - Oxygen\template\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Theme - Oxygen\template\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Theme - Oxygen\template\sendemail.php" />
+    <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Home\MessagingTestView.cshtml" />
   </ItemGroup>
   <ItemGroup>
