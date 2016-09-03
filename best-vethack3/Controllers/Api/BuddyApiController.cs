@@ -74,5 +74,12 @@ namespace best_vethack3.Controllers.Api
                 return Request.CreateResponse(HttpStatusCode.BadRequest, errorResponse);
             }
         }
+
+        [Route("test")]
+        [HttpGet]
+        public HttpResponseMessage Test()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, 1);
+        }
     }
 }
