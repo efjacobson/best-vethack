@@ -12,6 +12,53 @@ namespace best_vethack3.Services
 {
     public class BuddyService
     {
+        public static async Task<int> Create(Buddy Buddy)
+        {
+            int id = -1;
+
+            //get connection string from web.config
+            string connectionString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            try
+            {
+                if (sqlConnection.State == ConnectionState.Closed)
+                {
+                    await sqlConnection.OpenAsync();
+                }
+                SqlCommand sqlCommand = sqlConnection.CreateCommand();
+                sqlCommand.CommandText = "[dbo].[Buddy_Create]";
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("@firstName", Buddy.FirstName);
+                sqlCommand.Parameters.AddWithValue("@lastName", Buddy.LastName);
+                sqlCommand.Parameters.AddWithValue("@age", Buddy.Age);
+                sqlCommand.Parameters.AddWithValue("@isActive", Buddy.IsActive);
+                sqlCommand.Parameters.AddWithValue("@branch", Buddy.Branch);
+                sqlCommand.Parameters.AddWithValue("@rank", Buddy.Rank);
+                sqlCommand.Parameters.AddWithValue("@yearsServed", Buddy.YearsServed);
+                sqlCommand.Parameters.AddWithValue("@location", Buddy.Location);
+                sqlCommand.Parameters.AddWithValue("@currentOccupation", Buddy.CurrentOccupation);
+                sqlCommand.Parameters.AddWithValue("@tagline", Buddy.TagLine);
+                sqlCommand.Parameters.AddWithValue("@bio", Buddy.Bio);
+
+                object returnedObject = await sqlCommand.ExecuteScalarAsync();
+                int.TryParse(returnedObject.ToString(), out id);
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception.Message);
+            }
+            finally
+            {
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+            }
+
+            return id;
+        }
+
         public static async Task<List<Buddy>> GetAll()
         {
             List<Buddy> allBuddys = new List<Buddy>();

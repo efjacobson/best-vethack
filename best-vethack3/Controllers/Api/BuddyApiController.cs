@@ -30,5 +30,33 @@ namespace best_vethack3.Controllers.Api
                 return Request.CreateResponse(HttpStatusCode.BadRequest, errorResponse);
             }
         }
+
+        [Route]
+        [HttpPut]
+        public async Task<HttpResponseMessage> Create()
+        {
+            try
+            {
+                Buddy buddy = new Buddy();
+                buddy.FirstName = "test";
+                buddy.LastName = "test";
+                buddy.Age = 1;
+                buddy.IsActive = 1;
+                buddy.Branch = "test";
+                buddy.Rank = "test";
+                buddy.YearsServed = 1;
+                buddy.Location = "test";
+                buddy.CurrentOccupation = "test";
+                buddy.TagLine = "test";
+                buddy.Bio = "test";
+                int id = await BuddyService.Create(buddy);
+                return Request.CreateResponse(HttpStatusCode.OK, id);
+            }
+            catch (Exception exception)
+            {
+                ErrorResponse errorResponse = new ErrorResponse(exception.Message);
+                return Request.CreateResponse(HttpStatusCode.BadRequest, errorResponse);
+            }
+        }
     }
 }
