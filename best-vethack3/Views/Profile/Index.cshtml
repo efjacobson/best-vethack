@@ -1,5 +1,4 @@
-﻿@model = Models.ProfileViewModel
-
+﻿
 @{
     ViewBag.Title = "Index";
 }
@@ -64,14 +63,57 @@
 
     <input type="hidden" name="id" value="0">
 
+    <div class="result col-xs-6 col-md-8">    </div>
+
 </div>
 
 
 @section Scripts{
     <script>
 
-    var profilePage = {};
-        profilePage.profile = @Model
+        var profilePage = {
+            profile:{} 
+        };
+  
+        profilePage.profile.getById = function(id) {
+
+            var url = "/api/buddy/" + id;
+            var settings = {
+                cache: false,
+                dataType: "json",
+                //data: data,
+                success: onSuccess,
+                error: onError,
+                type: "GET"
+            };
+            $.ajax(url, settings);
+        };
+
+        function onSuccess(data) {
+            $('#id').val(data.Id);
+            $('#firstName').val(data.FirstName);
+            $('#lastName').val(data.LastName);
+            $('#age').val(data.Age);
+            $('#isActive').val(data.IsActive);
+            $('#branch').val(data.Branch);
+            $('#rank').val(data.Rank);
+            $('#years').val(data.YearsServed);
+            $('#location').val(data.Location);
+            $('#currentOccupation').val(data.CurrentOccupation);
+            $('#tagline').val(data.TagLine);
+            $('#bio').val(data.Bio);   
+        };
+
+        function onError() {
+            console.log("What went wrong?");
+        };
+
+
+        profilePage.id = window.location.pathname.split('/');
+
+        profilePage.profile.getById(profilePage.id[profilePage.length - 1]);
+       
+    
 </script>
 
 
