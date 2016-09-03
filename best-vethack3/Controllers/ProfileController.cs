@@ -1,4 +1,6 @@
-﻿using System;
+﻿using best_vethack3.Models;
+using best_vethack3.Controllers.Api;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +11,11 @@ namespace best_vethack3.Controllers
     public class ProfileController : Controller
     {
         // GET: Profile
-        public ActionResult Index()
+        [Route("{id:int}")]
+        public ActionResult Index(int id=0)
         {
             return View();
         }
+
     }
 }
