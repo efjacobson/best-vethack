@@ -59,6 +59,60 @@ namespace best_vethack3.Services
             return id;
         }
 
+        public static async Task<Buddy> GetById(int id)
+        {
+            Buddy buddy = new Buddy();
+
+            //get connection string from web.config
+            string connectionString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            if (sqlConnection.State == ConnectionState.Closed)
+            {
+                await sqlConnection.OpenAsync();
+            }
+
+            try
+            {
+                SqlCommand sqlCommand = sqlConnection.CreateCommand();
+                sqlCommand.CommandText = "[dbo].[Buddy_GetById]";
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("@Id", id);
+                IDataReader dataReader = sqlCommand.ExecuteReader();
+
+
+                int colpos;
+                while (dataReader.Read()) {
+                    colpos = 0;
+                    buddy.Id = dataReader.GetInt32(colpos++);
+                    buddy.FirstName = dataReader.GetString(colpos++);
+                    buddy.LastName = dataReader.GetString(colpos++);
+                    buddy.Age = dataReader.GetInt32(colpos++);
+                    buddy.IsActive = dataReader.GetInt32(colpos++);
+                    buddy.Branch = dataReader.GetString(colpos++);
+                    buddy.Rank = dataReader.GetString(colpos++);
+                    buddy.YearsServed = dataReader.GetInt32(colpos++);
+                    buddy.Location = dataReader.GetString(colpos++);
+                    buddy.CurrentOccupation = dataReader.GetString(colpos++);
+                    buddy.TagLine = dataReader.GetString(colpos++);
+                    buddy.Bio = dataReader.GetString(colpos++);
+                }
+
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception.Message);
+            }
+            finally
+            {
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+            }
+            return buddy;
+        }
+
         public static async Task<List<Buddy>> GetAll()
         {
             List<Buddy> allBuddys = new List<Buddy>();
@@ -81,22 +135,22 @@ namespace best_vethack3.Services
 
                 while (dataReader.Read())
                 {
-                    Buddy Buddy = new Buddy();
+                    Buddy buddy = new Buddy();
                     int colpos = 0;
 
-                    Buddy.Id = dataReader.GetInt32(colpos++);
-                    Buddy.FirstName = dataReader.GetString(colpos++);
-                    Buddy.LastName = dataReader.GetString(colpos++);
-                    Buddy.Age = dataReader.GetInt32(colpos++);
-                    Buddy.IsActive = dataReader.GetInt32(colpos++);
-                    Buddy.Branch = dataReader.GetString(colpos++);
-                    Buddy.Rank = dataReader.GetString(colpos++);
-                    Buddy.YearsServed = dataReader.GetInt32(colpos++);
-                    Buddy.Location = dataReader.GetString(colpos++);
-                    Buddy.CurrentOccupation = dataReader.GetString(colpos++);
-                    Buddy.TagLine = dataReader.GetString(colpos++);
-                    Buddy.Bio = dataReader.GetString(colpos++);
-                    allBuddys.Add(Buddy);
+                    buddy.Id = dataReader.GetInt32(colpos++);
+                    buddy.FirstName = dataReader.GetString(colpos++);
+                    buddy.LastName = dataReader.GetString(colpos++);
+                    buddy.Age = dataReader.GetInt32(colpos++);
+                    buddy.IsActive = dataReader.GetInt32(colpos++);
+                    buddy.Branch = dataReader.GetString(colpos++);
+                    buddy.Rank = dataReader.GetString(colpos++);
+                    buddy.YearsServed = dataReader.GetInt32(colpos++);
+                    buddy.Location = dataReader.GetString(colpos++);
+                    buddy.CurrentOccupation = dataReader.GetString(colpos++);
+                    buddy.TagLine = dataReader.GetString(colpos++);
+                    buddy.Bio = dataReader.GetString(colpos++);
+                    allBuddys.Add(buddy);
                 }
 
                 dataReader.Close();

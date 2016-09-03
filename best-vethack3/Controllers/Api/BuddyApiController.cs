@@ -31,6 +31,25 @@ namespace best_vethack3.Controllers.Api
             }
         }
 
+        [Route("{id:int}")]
+        [HttpGet]
+        public async Task<HttpResponseMessage> GetById(int id)
+        {
+            try
+            {
+                Buddy buddy = await BuddyService.GetById(id);
+                //ItemResponse<Buddy> response = new ItemResponse<Buddy>();
+                //response.Item = buddy;
+                //Buddy buddy = new Buddy();
+                return Request.CreateResponse(HttpStatusCode.OK, buddy);
+            }
+            catch (Exception exception)
+            {
+                ErrorResponse errorResponse = new ErrorResponse(exception.Message);
+                return Request.CreateResponse(HttpStatusCode.BadRequest, errorResponse);
+            }
+        }
+
         [Route]
         [HttpPut]
         public async Task<HttpResponseMessage> Create()
