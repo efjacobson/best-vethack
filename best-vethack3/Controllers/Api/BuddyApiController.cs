@@ -38,9 +38,6 @@ namespace best_vethack3.Controllers.Api
             try
             {
                 Buddy buddy = await BuddyService.GetById(id);
-                //ItemResponse<Buddy> response = new ItemResponse<Buddy>();
-                //response.Item = buddy;
-                //Buddy buddy = new Buddy();
                 return Request.CreateResponse(HttpStatusCode.OK, buddy);
             }
             catch (Exception exception)
