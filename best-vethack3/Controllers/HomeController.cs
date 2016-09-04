@@ -13,6 +13,11 @@ namespace best_vethack3.Controllers
             return View();
         }
 
+        public ActionResult MessagingTestView()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
