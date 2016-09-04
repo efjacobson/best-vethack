@@ -66,27 +66,33 @@
             }
             $mentor.find('#currentOccupation').text(mentor.CurrentOccupation);
             $mentor.find('#location').text(mentor.Location);
-            setRandomPicture($mentor);
+            var idNumber = mentor.Id;
+            setPicture($mentor, idNumber);
             return $mentor;
         }
 
-        function setRandomPicture($mentor) {
-            var caseNumber = Math.floor((Math.random() * 5) + 1);
-            switch (caseNumber) {
-                case 1:
-                    $mentor.find("#randomPic").attr("src", "/Images/blk_female_soldier_salute_tight_diag_arm.jpg");
-                    break;
+        function setPicture($mentor, idNumber) {
+            switch (idNumber) {
                 case 2:
-                    $mentor.find("#randomPic").attr("src", "/Images/maxresdefault.jpg");
+                    $mentor.find("#randomPic").attr("src", "/Photos/profile/jack.jpg");
                     break;
                 case 3:
-                    $mentor.find("#randomPic").attr("src", "/Images/spoehr-apr-2014-img5.png");
+                    $mentor.find("#randomPic").attr("src", "/Photos/profile/david.jpg");
                     break;
                 case 4:
-                    $mentor.find("#randomPic").attr("src", "/Images/u-s-army.jpg");
+                    $mentor.find("#randomPic").attr("src", "/Photos/profile/eric.jpg");
                     break;
                 case 5:
-                    $mentor.find("#randomPic").attr("src", "/Images/us-army-379036_960_720.jpg");
+                    $mentor.find("#randomPic").attr("src", "/Photos/profile/billy.jpg");
+                    break;
+                case 6:
+                    $mentor.find("#randomPic").attr("src", "/Photos/profile/jhamar.jpg");
+                    break;
+                case 7:
+                    $mentor.find("#randomPic").attr("src", "/Photos/profile/don.jpg");
+                    break;
+                default:
+                    $mentor.find("#randomPic").attr("src", "/Photos/profile/default.jpg");
                     break;
             }
         }
@@ -95,7 +101,7 @@
         <div class="col-lg-3">
             <div class="contact-box center-version mentorCard">
                 <a href="profile.html">
-                    <img alt="image" class="img-rounded" id="randomPic" src="/Themes/Inspinia_MVC5/Images/a6.jpg">
+                    <img alt="image" class="img-circle" id="randomPic" src="/Themes/Inspinia_MVC5/Images/a6.jpg">
                     <h3 class="m-b-xs" id="mentorName"><strong>Janet Carton</strong></h3>
                     <div class="font-bold age">23</div>
                     <address class="m-t-md">
