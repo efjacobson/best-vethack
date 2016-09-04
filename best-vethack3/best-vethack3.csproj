@@ -235,6 +235,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\BuddyApiController.cs" />
     <Compile Include="Controllers\Api\TwilioApiMessaging.cs" />
+    <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -456,6 +457,7 @@
     <Content Include="Theme - Oxygen\template\portfolio-single.html" />
     <Content Include="VetChat Landing page.aspx" />
     <Content Include="Views\BestVetHack Carousel Fotorama.html" />
+    <Content Include="Views\Forum\Index.cshtml" />
     <None Include="Views\Home\index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.config">
