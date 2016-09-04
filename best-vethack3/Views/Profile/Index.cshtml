@@ -138,7 +138,11 @@
             $('#firstName').text(data.FirstName);
             $('#lastName').text(data.LastName);
             $('#age').text(data.Age);
-            $('#isActive').text(data.IsActive);
+            if (data.IsActive) {
+                $('#isActive').text('Yes');
+            } else {
+                $('#isActive').text('No');
+            }
             $('#branch').text(data.Branch);
             $('#rank').text(data.Rank);
             $('#years').text(data.YearsServed);
