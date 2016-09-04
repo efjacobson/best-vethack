@@ -21,6 +21,17 @@
   
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
   <link rel="shortcut icon" href="images/favicon.ico">
+    <style>
+        body > div.main-nav,
+        body > div.main-nav.navbar-fixed-top {
+            display: none !important;
+        }
+
+        body > div.navbar.navbar-inverse.navbar-fixed-top {
+            display: none !important;
+        }
+    </style>
+
 </head><!--/head-->
 
 <body>
@@ -34,33 +45,33 @@
       <div class="carousel-inner">
         <div class="item active" style="background-image: url('/Photos/silhouette against flag.jpg')">
           <div class="caption">
-            <!--<h1 class="animated fadeInLeftBig">Welcome to <span>Oxygen</span></h1>-->
+            <h1 class="animated fadeInLeftBig"></h1>
             <p class="animated fadeInRightBig">"You can't explain what it's like</br></br> to have done certain things unless your</br></br> audience has some experience with it."</p>
-            <!--<a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Enter</a>-->
+            <a data-scroll class="animated fadeInUpBig" href="#contact"></a>
           </div>
         </div>
-        <div class="item" style="background-image: url('../../Photos/Solid stars with dogtags in corner.jpg'); ">
+        <div class="item" style="background-image: url('../../Photos/Solid stars with dogtags in corner.jpg')">
           <div class="caption">
             <h1 class="animated fadeInLeftBig"><span><font color="red">VETCHAT.US </font></span></h1>
             <p class="animated fadeInRightBig">Reach out now to text </br> or chat anonymously with a </br> veteran buddy.</p>
-            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">ENTER</a>
+            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#contact">ENTER</a>
           </div>
         </div>
-        <!--<div class="item" style="background-image: url(images/slider/3.jpg)">
-          <div class="caption">
-            <h1 class="animated fadeInLeftBig">We are <span>Creative</span></h1>
-            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
-            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
-          </div>-->
-        </div>
+        @*<div class="item" style="background-image: url(images/slider/3.jpg)">
+           <div class="caption">
+        <h1 class="animated fadeInLeftBig">We are <span>Creative</span></h1>
+        <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+        <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
+      </div>
+        </div>*@
       </div>
       <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
       <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
 
       <a id="tohash" href="#services"><i class="fa fa-angle-down"></i></a>
 
-    </div><!--/#home-slider-->
-    <div class="main-nav">
+    <!--/#home-slider-->
+    @*<div class="main-nav">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -76,18 +87,18 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">                 
             <li class="scroll active"><a href="#home">Home</a></li>
-            <li class="scroll"><a href="#services">Service</a></li> 
+            <li class="scroll"><a href="#contact">Service</a></li> 
             <li class="scroll"><a href="#about-us">About Us</a></li>                     
             <li class="scroll"><a href="#portfolio">Portfolio</a></li>
             <li class="scroll"><a href="#team">Team</a></li>
             <li class="scroll"><a href="#blog">Blog</a></li>
-            <li class="scroll"><a href="#contact">Contact</a></li>       
+            <li class="scroll"><a href="#contactUs">Contact</a></li>       
           </ul>
         </div>
       </div>
-    </div><!--/#main-nav-->
+    </div>*@<!--/#main-nav-->
   </header><!--/#home-->
-  <section id="services">
+  <section id="contact">
     <div class="container">
       <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="row">
@@ -170,7 +181,7 @@
         <div class="col-sm-6">
           <div class="our-skills wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
             <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-              <p class="lead">User Experiances</p>
+              <p class="lead">User Experiences</p>
               <div class="progress">
                 <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="95">95%</div>
               </div>
@@ -809,6 +820,9 @@
   <script type="text/javascript" src="/Scripts/jquery.countTo.js"></script>
   <script type="text/javascript" src="/Scripts/lightbox.min.js"></script>
   <script type="text/javascript" src="/Scripts/main.js"></script>
+
+   
+
 
 </body>
 </html>
