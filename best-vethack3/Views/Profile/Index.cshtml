@@ -2,10 +2,6 @@
     ViewBag.Title = "Index";
 }
 
-
-
-
-
 <h2>Profile</h2>
 
 <div class="row">
@@ -85,10 +81,10 @@
         <div class="col-md-9 padding-30">
             <input type="text" id="bio" />
         </div>
-        
+
     </div>
     <div class="col-xs-12 col-md-8">
-
+        <img src="" id="photo" style="border-radius:100%" height="300" width="300" alt="Profile Image" />
         <form id="contactForm">
             <input type="hidden" name="phoneNumberTo" id="phoneNumberTo" />
             <input type="hidden" name="id" id="id" />
@@ -135,6 +131,7 @@
         };
 
         function onSuccess(data) {
+            $('#photo').attr('src', '/Photos/profile/' + data.ImageUrl);
             $('#id').val(data.Id);
             $('#firstName').val(data.FirstName);
             $('#lastName').val(data.LastName);
@@ -154,13 +151,10 @@
             console.log("What went wrong?");
         };
 
-
         profilePage.id = window.location.pathname.split('/');
 
         profilePage.profile.getById(profilePage.id[profilePage.id.length - 1]);
 
-   
-           
         $(document).ready(function () {
             console.log("ready!");
             $("#submitButton").on("click", getInfo);
@@ -180,7 +174,6 @@
             });
         }
 
-
         function successFunc(data, status) {
             console.log(data);
         }
@@ -188,7 +181,6 @@
         function errorFunc() {
             console.log('error');
         }
-
 
     </script>
 
