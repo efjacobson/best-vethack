@@ -87,6 +87,8 @@
 
         selectAll(onSuccess, onError);
 
+        $('.messageButton').on("click", messageButtonIsClicked);
+
         function getMentorSuccess(data) {
             var arrayOfMentors = data.items;
             appendToDom(arrayOfMentors);
@@ -101,7 +103,7 @@
 
         function populateTemplate(mentor) {
             var $mentor = $($('#mentorsTemplate').html());
-            $mentor.attr('data-id', mentor.id);
+            $mentor.attr('data-id', mentor.Id);
             $mentor.find('#mentorName').text(mentor.FirstName + " " + mentor.LastName);
             $mentor.find('.age').text(mentor.Age + " Years Old");
             $mentor.find('#branch').text(mentor.Branch);
@@ -139,15 +141,14 @@
             }
         }
 
-        function messageButtonIsClicked(event) {
-            event.preventDefault();
+        function messageButtonIsClicked() {
             var id = $(this).closest('.col-lg-3').attr('data-id');
-            window.location.href = '/profile/' + id;
+            window.location.href = '/profile/index/' + id;
         }
     </script>
 
     <script type="text/template" id="mentorsTemplate">
-        <div class="col-lg-3">
+        <div class="col-lg-3" data-id="1">
             <div class="contact-box center-version mentorCard">
                 <a href="profile.html">
                     <img alt="image" class="img-rounded" id="randomPic" src="/Themes/Inspinia_MVC5/Images/a6.jpg">
@@ -164,7 +165,7 @@
                 </a>
                 <div class="contact-box-footer">
                     <div class="m-b-md">
-                        <a class="btn btn-primary messageButton"> Message </a>
+                        <button type="button" onclick="messageButtonIsClicked()" class="btn btn-primary messageButton"> Message </button>
                     </div>
                 </div>
             </div>
