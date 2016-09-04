@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/modernizr")
+        <style>
+            body > div.main-nav,
+            body > div.main-nav.navbar-fixed-top {
+                display: none !important;
+            }
+
+            body > div.navbar.navbar-inverse.navbar-fixed-top {
+                display: none !important;
+            }
+        </style>
 
 </head>
 <body>
@@ -27,8 +37,10 @@
                 @Html.Partial("_LoginPartial")
                 
             </div>
-            <center>
-                <a href="/profile/create" id="buddyLink" class="mentor button" style="font: bold 11px Arial;
+        </div>
+    </div>
+    <center>
+        <a href="/profile/create" id="buddyLink" class="mentor button" style="font: bold 11px Arial;
   text-decoration: none;
   background-color: #EEEEEE;
   color: #333333;
@@ -37,9 +49,7 @@
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;">Become a Mentor</a>
-            </center>
-        </div>
-    </div>
+    </center>
     <div class="container body-content">
         @RenderBody()
         <hr />
