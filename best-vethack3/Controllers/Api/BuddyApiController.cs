@@ -47,8 +47,7 @@ namespace best_vethack3.Controllers.Api
             }
         }
 
-        [Route]
-        [HttpPut]
+        [Route("create"), HttpPost]
         public async Task<HttpResponseMessage> Create()
         {
             try
