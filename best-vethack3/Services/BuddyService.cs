@@ -118,7 +118,7 @@ namespace best_vethack3.Services
 
         public static async Task<List<Buddy>> GetAll()
         {
-            List<Buddy> allBuddys = new List<Buddy>();
+            List<Buddy> allBuddies = new List<Buddy>();
 
             //get connection string from web.config
             string connectionString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
@@ -155,6 +155,7 @@ namespace best_vethack3.Services
                     buddy.TagLine = dataReader.GetString(colpos++);
                     buddy.Bio = dataReader.GetString(colpos++);
                     buddy.ImageUrl = dataReader.GetString(colpos++);
+                    allBuddies.Add(buddy);
                 }
 
                 dataReader.Close();
@@ -171,7 +172,7 @@ namespace best_vethack3.Services
                 }
             }
 
-            return allBuddys;
+            return allBuddies;
         }
     }
 }
