@@ -21,7 +21,7 @@ namespace best_vethack3.Controllers.Api
             try
             {
 
-                model.MessageBody = model.MessageBody + Environment.NewLine + Environment.NewLine + model.Signature;
+                model.MessageBody = model.MessageBody + Environment.NewLine + Environment.NewLine + model.MyPhone + Environment.NewLine + Environment.NewLine + model.Signature;
                 TwilioService.SendMessage(model.PhoneNumberTo, model.MessageBody);
                 SuccessResponse response = new SuccessResponse();
                 return Request.CreateResponse(response);

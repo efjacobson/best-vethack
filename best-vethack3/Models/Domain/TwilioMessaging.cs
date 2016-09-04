@@ -15,5 +15,7 @@ namespace best_vethack3.Models
         public string MessageBody { get; set; }
 
         public string Signature { get; set; }
+
+        public string MyPhone { get; set; }
     }
 }
