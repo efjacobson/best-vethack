@@ -193,14 +193,62 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BuddyService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="VetChat Landing page.aspx.cs">
+      <DependentUpon>VetChat Landing page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VetChat Landing page.aspx.designer.cs">
+      <DependentUpon>VetChat Landing page.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\lightbox.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\presets\preset1.css" />
+    <Content Include="Content\presets\preset2.css" />
+    <Content Include="Content\presets\preset3.css" />
+    <Content Include="Content\presets\preset4.css" />
+    <Content Include="Content\presets\preset5.css" />
+    <Content Include="Content\presets\preset6.css" />
+    <Content Include="Content\responsive.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\about-bg.jpg" />
+    <Content Include="images\blog\1.jpg" />
+    <Content Include="images\blog\2.jpg" />
+    <Content Include="images\blog\3.jpg" />
+    <Content Include="images\contact-bg.jpg" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\features-bg.jpg" />
+    <Content Include="images\lightbox\close.png" />
+    <Content Include="images\lightbox\loading.gif" />
+    <Content Include="images\lightbox\next.png" />
+    <Content Include="images\lightbox\prev.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\portfolio\1.jpg" />
+    <Content Include="images\portfolio\2.jpg" />
+    <Content Include="images\portfolio\3.jpg" />
+    <Content Include="images\portfolio\4.jpg" />
+    <Content Include="images\portfolio\5.jpg" />
+    <Content Include="images\portfolio\6.jpg" />
+    <Content Include="images\portfolio\7.jpg" />
+    <Content Include="images\portfolio\8.jpg" />
+    <Content Include="images\portfolio\portfolio-details.jpg" />
+    <Content Include="images\slider\1.jpg" />
+    <Content Include="images\slider\2.jpg" />
+    <Content Include="images\slider\3.jpg" />
+    <Content Include="images\team\1.jpg" />
+    <Content Include="images\team\2.jpg" />
+    <Content Include="images\team\3.jpg" />
+    <Content Include="images\team\4.jpg" />
+    <Content Include="images\twitter-bg.jpg" />
     <Content Include="Photos\20160701__02TCAVETw-1.jpg" />
     <Content Include="Photos\3 soldiers left, black box right.jpg" />
     <Content Include="Photos\3-Soldier-With-Black-lab.jpg" />
@@ -242,17 +290,32 @@
     <Content Include="Photos\womenvets3.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.countTo.js" />
+    <Content Include="Scripts\jquery.inview.min.js" />
+    <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lightbox.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\mousescroll.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\smoothscroll.js" />
+    <Content Include="Scripts\wow.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Theme - Oxygen\documentation\assets\css\documenter_style.css" />
     <Content Include="Theme - Oxygen\documentation\assets\css\img\info.png" />
@@ -320,7 +383,9 @@
     <Content Include="Theme - Oxygen\template\js\smoothscroll.js" />
     <Content Include="Theme - Oxygen\template\js\wow.min.js" />
     <Content Include="Theme - Oxygen\template\portfolio-single.html" />
+    <Content Include="VetChat Landing page.aspx" />
     <Content Include="Views\BestVetHack Carousel Fotorama.html" />
+    <None Include="Views\Home\index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -334,7 +399,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -365,6 +430,7 @@
     <Content Include="Theme - Oxygen\template\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Theme - Oxygen\template\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Theme - Oxygen\template\sendemail.php" />
+    <Content Include="Views\Shared\VetChat_Landing_page.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
