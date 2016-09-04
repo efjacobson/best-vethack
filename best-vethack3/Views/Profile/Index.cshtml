@@ -3,65 +3,80 @@
 }
 <h2>Profile</h2>
 
-<div class="row form-control">
-    <div class="col-xs-6 col-md-8 paddy">
-        <label class="label label-info col-md-2" for="firstName">First Name</label>
-        <input type="text" id="firstName" class="col-md-8" name="firstName" value="" />
-    </div>
-    <div class="col-xs-6 col-md-8 paddy">
-        <label class="label label-info col-md-2" for="lastName">Last Name</label>
-        <input type="text" id="lastName" class="col-md-8" name="lastName" value="" />
-    </div>
-    <div class="col-xs-6 col-md-8 paddy">
-        <label class="label label-info col-md-2" for="age">Age</label>
-        <input type="text" id="age" class="col-md-8" name="age" value="" />
-    </div>
-    <div class="col-xs-6 col-md-8 paddy">
-        <label class="label label-info col-md-2" for="isActive">Active</label>
-        <input type="text" id="isActive" class="col-md-8" name="isActive" value="" />
-    </div>
-    <div class="col-xs-6 col-md-8 paddy">
-        <label class="label label-info col-md-2" for="branch">Branch</label>
-        <input type="text" id="branch" class="col-md-8" name="branch" value="" />
-    </div>
-    <div class="col-xs-6 col-md-8 paddy">
-        <label class="label label-info col-md-2" for="rank">Rank</label>
-        <input type="text" id="rank" class="input-group-lg col-md-8" name="rank" value="" />
-    </div>
-    <div class="col-xs-6 col-md-8 paddy">
-        <label class="label label-info col-md-2" for="years">Years</label>
-        <input type="text" id="years" class="input-group-lg col-md-8" name="years" value="" />
-    </div>
-    <div class="col-xs-6 col-md-8 paddy">
-        <label class="label label-info col-md-2" for="location">Location</label>
-        <input type="text" id="location" class="input-group-lg col-md-8" name="location" value="" />
-    </div>
-    <div class="col-xs-6 col-md-8 paddy">
-        <label class="label label-info col-md-2" for="currentOccupation">Current Occupation</label>
-        <input type="text" id="currentOccupation" class="input-group-lg col-md-8" name="currentOccupation" value="" />
-    </div>
-    <div class="col-xs-6 col-md-8 paddy">
-        <label class="label label-info col-md-2" for="tagline">Tagline</label>
-        <input type="text" id="tagline" class="input-group-lg col-md-8" name="tagline" value="" />
-    </div>
-    <div class="col-xs-6 col-md-8 paddy">
-        <label class="label label-info col-md-2" for="bio">Bio</label>
-        <input type="text" id="bio" class="input-group-lg col-md-8" name="bio" value="" />
-    </div>
-    <input type="hidden" name="id" value="0">
+<div class="row">
+    <div class="col-xs-12">
+        <div class="col-xs-12">
+            <label class="label label-info col-md-2" for="firstName">First Name</label>
+            <input type="text" id="firstName" class="col-md-10" name="firstName" value="" />
+        </div>
 
-    <div class="result col-xs-6 col-md-8">    </div>
+        <div class="col-xs-12">
+            <label class="label label-info col-md-2" for="lastName">Last Name</label>
+            <input type="text" id="lastName" class="col-md-10" name="lastName" value="" />
+        </div>
 
+        <div class="col-xs-12">
+            <label class="label label-info col-md-2" for="age">Age</label>
+            <input type="text" id="age" class="col-md-10" name="age" value="" />
+        </div>
+
+        <div class="col-xs-12 ">
+            <label class="label label-info col-md-2" for="isActive">Active</label>
+            <input type="text" id="isActive" class="col-md-10" name="isActive" value="" />
+        </div>
+
+        <div class="col-xs-12">
+            <label class="label label-info col-md-2" for="branch">Branch</label>
+            <input type="text" id="branch" class="col-md-10" name="branch" value="" />
+        </div>
+
+        <div class="col-xs-12">
+            <label class="label label-info col-md-2" for="rank">Rank</label>
+            <input type="text" id="rank" class="col-md-10" name="rank" value="" />
+        </div>
+
+        <div class="col-xs-12">
+            <label class="label label-info col-md-2" for="years">Years</label>
+            <input type="text" id="years" class="col-md-10" name="years" value="" />
+        </div>
+        <div class="col-xs-12">
+            <label class="label label-info col-md-2" for="location">Location</label>
+            <input type="text" id="location" class="col-md-10" name="location" value="" />
+        </div>
+
+        <div class="col-xs-12">
+            <label class="label label-info col-md-2" for="currentOccupation">Occupation</label>
+            <input type="text" id="currentOccupation" class="col-md-10" name="currentOccupation" value="" />
+        </div>
+
+        <div class="col-xs-12">
+            <label class="label label-info col-md-2" for="tagline">Tagline</label>
+            <input type="text" id="tagline" class="col-md-10" name="tagline" value="" />
+        </div>
+
+        <div class="col-xs-12">
+            <label class="label label-info col-md-2" for="bio">Bio</label>
+            <input type="text" id="bio" class="col-md-10" name="bio" value="" />
+        </div>
+
+        <input type="hidden" name="id" value="0">
+    </div>
+    <div class="col-xs-12">
+        <div class="col-xs-12">
+            <label class="label label-info col-md-2" for="message">Message</label>
+            <input type="text" id="message" class="col-md-10" name="message" value="" />
+        </div>
+    </div>
 </div>
 
 @section Scripts{
     <script>
 
         var profilePage = {
-            profile:{} 
+            profile: {}
         };
-  
-        profilePage.profile.getById = function(id) {
+
+        profilePage.profile.getById = function (id) {
 
             var url = "/api/buddy/" + id;
             var settings = {
@@ -87,7 +102,7 @@
             $('#location').val(data.Location);
             $('#currentOccupation').val(data.CurrentOccupation);
             $('#tagline').val(data.TagLine);
-            $('#bio').val(data.Bio);   
+            $('#bio').val(data.Bio);
         };
 
         function onError() {
@@ -98,8 +113,8 @@
         profilePage.id = window.location.pathname.split('/');
 
         profilePage.profile.getById(profilePage.id[profilePage.id.length - 1]);
-       
-    
-</script>
+
+
+    </script>
 
 }
