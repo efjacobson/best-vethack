@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "best-vethack", "best-vethack\best-vethack.csproj", "{56678297-13B1-41E7-8E93-8224A133E4AA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "best-vethack3", "best-vethack3\best-vethack3.csproj", "{F6381070-C4F8-435E-848F-68A64BEAAE23}"
-EndProject
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "best-vethack3.Azure", "best-vethack3.Azure\best-vethack3.Azure.ccproj", "{483B9502-CFC7-400F-A245-C5063130EE2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{56678297-13B1-41E7-8E93-8224A133E4AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56678297-13B1-41E7-8E93-8224A133E4AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56678297-13B1-41E7-8E93-8224A133E4AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56678297-13B1-41E7-8E93-8224A133E4AA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F6381070-C4F8-435E-848F-68A64BEAAE23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6381070-C4F8-435E-848F-68A64BEAAE23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6381070-C4F8-435E-848F-68A64BEAAE23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6381070-C4F8-435E-848F-68A64BEAAE23}.Release|Any CPU.Build.0 = Release|Any CPU
-		{483B9502-CFC7-400F-A245-C5063130EE2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{483B9502-CFC7-400F-A245-C5063130EE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{483B9502-CFC7-400F-A245-C5063130EE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{483B9502-CFC7-400F-A245-C5063130EE2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
