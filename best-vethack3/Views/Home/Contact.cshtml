@@ -1,64 +1,16 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-
 <link href="~/Content/cardStyle.css" rel="stylesheet" />
-
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
-
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row mentorContainer">
-        <div class="col-lg-3">
-            <div class="contact-box center-version mentorCard">
-                <a href="profile.html">
-                    <img alt="image" class="img-rounded" src="/Images/blk_female_soldier_salute_tight_diag_arm.jpg">
-                    <h3 class="m-b-xs"><strong>Janet Carton</strong></h3>
-                    <div class="font-bold branch">42</div>
-                    <address class="m-t-md">
-                        <strong>Air Force</strong><br>
-                        <div>Sergeant</div>
-                        <div>15 Years Served</div>
-                        <div>Retired</div>
-                        <div>Current Occupation</div>
-                        <div id="city">San Diego, CA</div><br>
-                    </address>
-                </a>
-                <div class="contact-box-footer">
-                    <div class="m-b-md">
-                        <a class="btn btn-primary"> Message </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="contact-box center-version mentorCard">
-                <a href="profile.html">
-                    <img alt="image" class="img-rounded" src="/Images/u-s-army.jpg">
-                    <h3 class="m-b-xs"><strong>Tony Stark</strong></h3>
-                    <div class="font-bold branch">36</div>
-                    <address class="m-t-md">
-                        <strong>Marine Corp</strong><br>
-                        <div>Lieutenant</div>
-                        <div>10 Years Served</div>
-                        <div>Active</div>
-                        <div>Social Worker</div>
-                        <div id="city">Austin, TX</div><br>
-                    </address>
-                </a>
-                <div class="contact-box-footer">
-                    <div class="m-b-md">
-                        <a class="btn btn-primary"> Message </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 
-
 @section Scripts {
-
     <script>
 
         selectAll = function (onSuccess, onError) {
@@ -101,7 +53,7 @@
 
         function populateTemplate(mentor) {
             var $mentor = $($('#mentorsTemplate').html());
-            $mentor.attr('data-id', mentor.id);
+            $mentor.find('#js-toProfile').attr('href', '/profile/index/' + mentor.Id);
             $mentor.find('#mentorName').text(mentor.FirstName + " " + mentor.LastName);
             $mentor.find('.age').text(mentor.Age + " Years Old");
             $mentor.find('#branch').text(mentor.Branch);
@@ -138,14 +90,7 @@
                     break;
             }
         }
-
-        function messageButtonIsClicked(event) {
-            event.preventDefault();
-            var id = $(this).closest('.col-lg-3').attr('data-id');
-            window.location.href = '/profile/' + id;
-        }
     </script>
-
     <script type="text/template" id="mentorsTemplate">
         <div class="col-lg-3">
             <div class="contact-box center-version mentorCard">
@@ -164,7 +109,7 @@
                 </a>
                 <div class="contact-box-footer">
                     <div class="m-b-md">
-                        <a class="btn btn-primary messageButton"> Message </a>
+                        <a id="js-toProfile" class="btn btn-primary messageButton"> Message </a>
                     </div>
                 </div>
             </div>
