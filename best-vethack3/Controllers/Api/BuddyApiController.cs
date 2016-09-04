@@ -48,24 +48,25 @@ namespace best_vethack3.Controllers.Api
         }
 
         [Route("create"), HttpPost]
-        public async Task<HttpResponseMessage> Create()
+        public async Task<HttpResponseMessage> Create(Buddy model)
         {
             try
             {
                 Buddy buddy = new Buddy();
-                buddy.FirstName = "test";
-                buddy.LastName = "test";
-                buddy.Age = 1;
-                buddy.IsActive = 1;
-                buddy.Branch = "test";
-                buddy.Rank = "test";
-                buddy.YearsServed = 1;
-                buddy.Location = "test";
-                buddy.CurrentOccupation = "test";
-                buddy.TagLine = "test";
-                buddy.Bio = "test";
-                int id = await BuddyService.Create(buddy);
-                return Request.CreateResponse(HttpStatusCode.OK, id);
+                buddy.FirstName = model.FirstName;
+                buddy.LastName = model.LastName;
+                buddy.PhoneNumber = model.PhoneNumber;
+                buddy.Age = model.Age;
+                buddy.IsActive = model.IsActive;
+                buddy.Branch = model.Branch;
+                buddy.Rank = model.Rank;
+                buddy.YearsServed = model.YearsServed;
+                buddy.Location = model.Location;
+                buddy.CurrentOccupation = model.CurrentOccupation;
+                buddy.TagLine = model.TagLine;
+                buddy.Bio = model.Bio;
+                await BuddyService.Create(buddy);
+                return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception exception)
             {

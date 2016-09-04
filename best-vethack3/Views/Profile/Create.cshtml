@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
 }
 
 <h2>Details</h2>
@@ -18,6 +18,12 @@
         </div>
     </div>
     <div class="form-group row">
+        <label for="example-email-input" class="col-xs-2 col-form-label">Phone Number</label>
+        <div class="col-xs-10">
+            <input class="form-control" id="phoneNumber" name="phoneNumber" type="tel" placeholder="Enter your phone number...">
+        </div>
+    </div>
+    <div class="form-group row">
         <label for="example-email-input" class="col-xs-2 col-form-label">Age</label>
         <div class="col-xs-10">
             <input class="form-control" id="age" name="age" type="number" placeholder="Enter your age...">
@@ -26,7 +32,7 @@
     <div class="form-group row">
         <label for="example-url-input" class="col-xs-2 col-form-label">Active</label>
         <div class="col-xs-10">
-            <input class="form-control" id="active" name="active" type="text" placeholder="Enter active duty status...">
+            <input class="form-control" id="isActive" name="isActive" type="number" placeholder="1 for active, 0 for inactive...">
         </div>
     </div>
     <div class="form-group row">
@@ -54,7 +60,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="example-date-input" class="col-xs-2 col-form-label">Current Occupation</label>
+        <label for="example-date-input" style="font-size:12px;" class="col-xs-2 col-form-label">Current Occupation</label>
         <div class="col-xs-10">
             <input class="form-control" id="currentOccupation" name="currentOccupation" type="text" placeholder="Enter your occupation...">
         </div>
@@ -106,10 +112,13 @@
                         required: true,
                         minlength: 2,
                     },
+                    phoneNumber: {
+                        required: true,  
+                    },
                     age: {
                         required: true,
                     },
-                    active: {
+                    isActive: {
                         required: true,
 
                     },
@@ -145,12 +154,15 @@
                         required: "Last Name Is Required",
                         minlength: "Must Be Longer than Two Charachters",
                     },
+                    phoneNumber: {
+                        required: "Phone Number Is Required",
+                        phoneUS: "Please Enter A Vaild Phone Number",
+                    },
                     age: {
                         required: "A Phone Number is Required",
                     },
-                    active: {
+                    isActive: {
                         required: "Your Currect Active Status is Required",
-                        minlength: "Please Enter your active status",
                     },
                     branch: {
                         required: "A Branch is Required",
@@ -183,22 +195,63 @@
         vetchat.page.handlers.createUser = function (event) {
             event.preventDefault();
             var userInfo = {};
-            userInfo.firstName = $("#firstName").val();
-            userInfo.lastName = $("#lastName").val();
-            userInfo.age = $("#age").val();
-            userInfo.isActive = $("#active").val();
-            userInfo.branch = $("#branch").val();
-            userInfo.rank = $("#rank").val();
-            userInfo.yearsServed = $("#yearsServed").val();
-            userInfo.location = $("#location").val();
-            userInfo.currentOccupation = $("#currentOccupation").val();
-            userInfo.tagline = $("#tagline").val();
-            userInfo.bio = $("#bio").val();
+            userInfo.FirstName = $("#firstName").val();
+            userInfo.LastName = $("#lastName").val();
+            userInfo.PhoneNumber = $("#phoneNumber").val();
+            userInfo.Age = $("#age").val();
+            userInfo.IsActive = $("#isActive").val();
+            userInfo.Branch = $("#branch").val();
+            userInfo.Rank = $("#rank").val();
+            userInfo.YearsServed = $("#yearsServed").val();
+            userInfo.Location = $("#location").val();
+            userInfo.CurrentOccupation = $("#currentOccupation").val();
+            userInfo.TagLine = $("#tagline").val();
+            userInfo.Bio = $("#bio").val();
 
             console.log(userInfo);
-            vetchat.services.profile.create(payload, vetchat.services.users.onUpdateSuccess, vetchat.services.users.onUpdateFailure);
+            vetchat.services.profile.create(userInfo, vetchat.page.handlers.buddyCreateSuccess, vetchat.page.handlers.buddyCreateError);
+
+            return userInfo;
 
         };
+
+        vetchat.page.handlers.buddyCreateSuccess = function (event) {
+            event.preventDefault();
+
+            onsole.log('ajax success')
+
+            $("#firstName").val('');
+            $("#lastName").val('');
+            $("#phoneNumber").val('');
+            $("#age").val('');
+            $("#isActive").val('');
+            $("#branch").val('');
+            $("#rank").val('');
+            $("#yearsServed").val('');
+            $("#location").val('');
+            $("#currentOccupation").val('');
+            $("#tagline").val('');
+            $("#bio").val('');
+
+        }
+
+        vetchat.page.handlers.buddyCreateError = function (event) {
+            console.log('ajax error')
+
+            $("#firstName").val('');
+            $("#lastName").val('');
+            $("#phoneNumber").val('');
+            $("#age").val('');
+            $("#isActive").val('');
+            $("#branch").val('');
+            $("#rank").val('');
+            $("#yearsServed").val('');
+            $("#location").val('');
+            $("#currentOccupation").val('');
+            $("#tagline").val('');
+            $("#bio").val('');
+
+        }
 
 
     </script>
