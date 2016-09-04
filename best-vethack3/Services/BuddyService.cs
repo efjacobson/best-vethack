@@ -98,6 +98,7 @@ namespace best_vethack3.Services
                     buddy.CurrentOccupation = dataReader.GetString(colpos++);
                     buddy.TagLine = dataReader.GetString(colpos++);
                     buddy.Bio = dataReader.GetString(colpos++);
+                    buddy.ImageUrl = dataReader.GetString(colpos++);
                 }
 
             }
@@ -153,7 +154,7 @@ namespace best_vethack3.Services
                     buddy.CurrentOccupation = dataReader.GetString(colpos++);
                     buddy.TagLine = dataReader.GetString(colpos++);
                     buddy.Bio = dataReader.GetString(colpos++);
-                    allBuddys.Add(buddy);
+                    buddy.ImageUrl = dataReader.GetString(colpos++);
                 }
 
                 dataReader.Close();

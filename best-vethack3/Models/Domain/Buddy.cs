@@ -20,5 +20,6 @@ namespace best_vethack3.Models.Domain
         public string CurrentOccupation { get; set; }
         public string TagLine { get; set; }
         public string Bio { get; set; }
+        public string ImageUrl { get; set; }
     }
 }
