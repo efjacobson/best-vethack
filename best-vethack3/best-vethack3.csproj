@@ -337,6 +337,13 @@
     <Content Include="Photos\lila-image-1024x683.jpg" />
     <Content Include="Photos\MTI4OTkzMjQwOTI5NTcyMTE0.jpg" />
     <Content Include="Photos\ows_141549205066091.jpg" />
+    <Content Include="Photos\profile\billy.jpg" />
+    <Content Include="Photos\profile\david.jpg" />
+    <Content Include="Photos\profile\default.jpg" />
+    <Content Include="Photos\profile\don.jpg" />
+    <Content Include="Photos\profile\eric.jpg" />
+    <Content Include="Photos\profile\jack.jpg" />
+    <Content Include="Photos\profile\jhamar.jpg" />
     <Content Include="Photos\r960-4ac249345d573b1c2917d2f51d8c5702.jpg" />
     <Content Include="Photos\silhouette against flag.jpg" />
     <Content Include="Photos\Solid stars with dogtags in corner.jpg" />
