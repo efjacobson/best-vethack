@@ -1,0 +1,205 @@
+﻿@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<form id="currentUserProfile">
+    <div class="form-group row">
+        <label for="example-text-input" class="col-xs-2 col-form-label">First Name</label>
+        <div class="col-xs-10">
+            <input class="form-control" id="firstName" name="firstName" type="text" placeholder="Enter your first name...">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="example-search-input" class="col-xs-2 col-form-label">Last name</label>
+        <div class="col-xs-10">
+            <input class="form-control" id="lastName" name="lastName" type="text" placeholder="Enter your last name...">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="example-email-input" class="col-xs-2 col-form-label">Age</label>
+        <div class="col-xs-10">
+            <input class="form-control" id="age" name="age" type="number" placeholder="Enter your age...">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="example-url-input" class="col-xs-2 col-form-label">Active</label>
+        <div class="col-xs-10">
+            <input class="form-control" id="active" name="active" type="text" placeholder="Enter active duty status...">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="example-tel-input" class="col-xs-2 col-form-label">Branch</label>
+        <div class="col-xs-10">
+            <input class="form-control" id="branch" name="branch" type="text" placeholder="Enter your branch...">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="example-password-input" class="col-xs-2 col-form-label">Rank</label>
+        <div class="col-xs-10">
+            <input class="form-control" id="rank" name="rank" type="text" placeholder="Enter your rank...">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="example-number-input" class="col-xs-2 col-form-label">Years Served</label>
+        <div class="col-xs-10">
+            <input class="form-control" id="yearsServed" name="yearsServed" type="number" placeholder="Enter your years served...">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Location</label>
+        <div class="col-xs-10">
+            <input class="form-control" id="location" name="location" type="text" placeholder="Enter your location...">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="example-date-input" class="col-xs-2 col-form-label">Current Occupation</label>
+        <div class="col-xs-10">
+            <input class="form-control" id="currentOccupation" name="currentOccupation" type="text" placeholder="Enter your occupation...">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="example-month-input" class="col-xs-2 col-form-label">Tagline</label>
+        <div class="col-xs-10">
+            <input class="form-control" id="tagline" name="tagline" type="text" placeholder="Enter your tagline...">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="example-week-input" class="col-xs-2 col-form-label">Bio</label>
+        <div class="col-xs-10">
+            <input class="form-control" id="bio" name="bio" type="text" style="height:250px;" placeholder="Enter a short bio...">
+        </div>
+    </div>
+
+    <button type="submit" class="updateUser">Submit</button>
+</form>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.validate.js"></script>  
+    <script src="~/Scripts/vetchat.js"></script>
+    <script src="~/Scripts/vetchat.service.profile.js"></script>
+    
+    <script type="text/javascript">
+
+
+        vetchat.page.startUp = function () {
+
+            $(".updateUser").on('click', vetchat.page.handlers.createUser);
+
+            vetchat.page.initializeValidation();
+
+        }
+
+        vetchat.page.initializeValidation = function () {
+            //  set defaults for the entire plugin
+            jQuery.validator.setDefaults({
+                debug: true
+            });
+            $('#currentUserProfile').validate({
+                rules: {
+                    firstName: {
+                        required: true,
+                        minlength: 2,
+                    },
+                    lastName: {
+                        required: true,
+                        minlength: 2,
+                    },
+                    age: {
+                        required: true,
+                    },
+                    active: {
+                        required: true,
+
+                    },
+                    branch: {
+                        required: true,
+
+                    },
+                    rank: {
+                        required: false,
+                    },
+                    yearsServed: {
+                        required: true,
+                    },
+                    location: {
+                        required: true,
+                    },
+                    currentOccupation: {
+                        required: false,
+                    },
+                    tagline: {
+                        required: true,
+                    },
+                    bio: {
+                        required: true,
+                    },
+                },
+                messages: {
+                    firstName: {
+                        required: "First Name Is Required",
+                        minlength: "Must Be Longer than Two Charachters",
+                    },
+                    lastName: {
+                        required: "Last Name Is Required",
+                        minlength: "Must Be Longer than Two Charachters",
+                    },
+                    age: {
+                        required: "A Phone Number is Required",
+                    },
+                    active: {
+                        required: "Your Currect Active Status is Required",
+                        minlength: "Please Enter your active status",
+                    },
+                    branch: {
+                        required: "A Branch is Required",
+                    },
+                    rank: {
+                        required: "A Rank is Required",
+                    },
+                    yearsServed: {
+                        required: "Your Years Served is Required",
+                    },
+                    location: {
+                        required: "Your Locaiton is Required",
+                    },
+                    currentOccupation: {
+                        required: false,
+                    },
+                    tagline: {
+                        required: "A Tagline is Required",
+                    },
+                    bio: {
+                        required: "A Short Bio is Required",
+                    },
+                }
+
+            });
+
+
+        };
+
+        vetchat.page.handlers.createUser = function (event) {
+            event.preventDefault();
+            var userInfo = {};
+            userInfo.firstName = $("#firstName").val();
+            userInfo.lastName = $("#lastName").val();
+            userInfo.age = $("#age").val();
+            userInfo.isActive = $("#active").val();
+            userInfo.branch = $("#branch").val();
+            userInfo.rank = $("#rank").val();
+            userInfo.yearsServed = $("#yearsServed").val();
+            userInfo.location = $("#location").val();
+            userInfo.currentOccupation = $("#currentOccupation").val();
+            userInfo.tagline = $("#tagline").val();
+            userInfo.bio = $("#bio").val();
+
+            console.log(userInfo);
+            vetchat.services.profile.create(payload, vetchat.services.users.onUpdateSuccess, vetchat.services.users.onUpdateFailure);
+
+        };
+
+
+    </script>
+}

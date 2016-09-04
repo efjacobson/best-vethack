@@ -17,5 +17,11 @@ namespace best_vethack3.Controllers
             return View();
         }
 
+        
+        public ActionResult Create()
+        {
+            return View();
+        }
+
     }
 }
