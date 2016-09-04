@@ -13,6 +13,11 @@ namespace best_vethack3.Controllers
             return View();
         }
 
+        public ActionResult MessagingTestView()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -22,7 +27,7 @@ namespace best_vethack3.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact Buddies.";
 
             return View();
         }
