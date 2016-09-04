@@ -5,86 +5,88 @@
 <h2>Profile</h2>
 
 <div class="row">
-    <div class="col-xs-12 col-md-4 border-none">
+    <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
+        <img src="" id="photo" style="border-radius:100%;margin-bottom:40px;" height="300" width="300" alt="Profile Image" />
+    </div>
+    <div class="col-xs-12 col-md-4 border-none" style="background: rgba(255,255,255,.85); padding-top: 30px;margin-bottom:40px;">
         <div class="col-md-3">
             <label class="label label-info" for="firstName">First Name</label>
         </div>
         <div class="col-md-9">
-            <input type="text" id="firstName" class="" />
+            <p type="text" id="firstName" class=""></p>
         </div>
 
         <div class="col-md-3">
             <label class="label label-info" for="lastName">Last Name</label>
         </div>
         <div class="col-md-9">
-            <input type="text" id="lastName" />
+            <p type="text" id="lastName"></p>
         </div>
 
         <div class="col-md-3">
             <label class="label label-info" for="age">Age</label>
         </div>
         <div class="col-md-9">
-            <input type="text" id="age" />
+            <p type="text" id="age"></p>
         </div>
 
         <div class="col-md-3">
             <label class="label label-info" for="isActive">Active</label>
         </div>
         <div class="col-md-9">
-            <input type="text" id="isActive" />
+            <p type="text" id="isActive"></p>
         </div>
 
         <div class="col-md-3">
             <label class="label label-info" for="branch">Branch</label>
         </div>
         <div class="col-md-9">
-            <input type="text" id="branch" />
+            <p type="text" id="branch"></p>
         </div>
 
         <div class="col-md-3">
             <label class="label label-info" for="rank">Rank</label>
         </div>
         <div class="col-md-9">
-            <input type="text" id="rank" />
+            <p type="text" id="rank"></p>
         </div>
 
         <div class="col-md-3">
             <label class="label label-info" for="years">Years</label>
         </div>
         <div class="col-md-9">
-            <input type="text" id="years" />
+            <p type="text" id="years"></p>
         </div>
         <div class="col-md-3">
             <label class="label label-info" for="location">Location</label>
         </div>
         <div class="col-md-9">
-            <input type="text" id="location" />
+            <p type="text" id="location"></p>
         </div>
 
         <div class="col-md-3">
             <label class="label label-info" for="currentOccupation">Occupation</label>
         </div>
         <div class="col-md-9">
-            <input type="text" id="currentOccupation" />
+            <p type="text" id="currentOccupation"></p>
         </div>
 
         <div class="col-md-3">
             <label class="label label-info" for="tagline">Tagline</label>
         </div>
         <div class="col-md-9">
-            <input type="text" id="tagline" />
+            <p type="text" id="tagline"></p>
         </div>
 
         <div class="col-md-3">
             <label class="label label-info" for="bio">Bio</label>
         </div>
         <div class="col-md-9 padding-30">
-            <input type="text" id="bio" />
+            <p type="text" id="bio"></p>
         </div>
 
     </div>
-    <div class="col-xs-12 col-md-8">
-        <img src="" id="photo" style="border-radius:100%" height="300" width="300" alt="Profile Image" />
+    <div class="col-xs-12 col-md-4">
         <form id="contactForm">
             <input type="hidden" name="phoneNumberTo" id="phoneNumberTo" />
             <input type="hidden" name="id" id="id" />
@@ -96,7 +98,7 @@
                           placeholder="Type your message here."></textarea>
             </div>
             <div class="col-md-12">
-                <label class="label label-primary" for="phone">Phone</label>
+                <label class="label label-primary" for="phone" placeholder="Enter your phone number here.">Phone</label>
             </div>
             <div class="col-md-12">
                 <input type="tel" id="myPhone" name="myPhone" />
@@ -132,18 +134,18 @@
 
         function onSuccess(data) {
             $('#photo').attr('src', '/Photos/profile/' + data.ImageUrl);
-            $('#id').val(data.Id);
-            $('#firstName').val(data.FirstName);
-            $('#lastName').val(data.LastName);
-            $('#age').val(data.Age);
-            $('#isActive').val(data.IsActive);
-            $('#branch').val(data.Branch);
-            $('#rank').val(data.Rank);
-            $('#years').val(data.YearsServed);
-            $('#location').val(data.Location);
-            $('#currentOccupation').val(data.CurrentOccupation);
-            $('#tagline').val(data.TagLine);
-            $('#bio').val(data.Bio);
+            $('#id').text(data.Id);
+            $('#firstName').text(data.FirstName);
+            $('#lastName').text(data.LastName);
+            $('#age').text(data.Age);
+            $('#isActive').text(data.IsActive);
+            $('#branch').text(data.Branch);
+            $('#rank').text(data.Rank);
+            $('#years').text(data.YearsServed);
+            $('#location').text(data.Location);
+            $('#currentOccupation').text(data.CurrentOccupation);
+            $('#tagline').text(data.TagLine);
+            $('#bio').text(data.Bio);
             $('#phoneNumberTo').val(data.PhoneNumber);
         };
 
@@ -158,6 +160,9 @@
         $(document).ready(function () {
             console.log("ready!");
             $("#submitButton").on("click", getInfo);
+            $(document.body).css('background-image', 'url("/Photos/image.jpg")');
+            $(document.body).css('background-repeat', 'no-repeat');
+            $(document.body).css('background-size', 'cover');
         });
 
         var getInfo = function () {

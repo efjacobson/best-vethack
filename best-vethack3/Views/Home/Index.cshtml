@@ -32,6 +32,17 @@
         }
     </style>
 
+    <script type="text/javascript" src="/Scripts/jquery.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="/Scripts/jquery.inview.min.js"></script>
+    <script type="text/javascript" src="/Scripts/wow.min.js"></script>
+    <script type="text/javascript" src="/Scripts/mousescroll.js"></script>
+    <script type="text/javascript" src="/Scripts/smoothscroll.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.countTo.js"></script>
+    <script type="text/javascript" src="/Scripts/lightbox.min.js"></script>
+    <script type="text/javascript" src="/Scripts/main.js"></script>
+
 </head><!--/head-->
 
 <body>
@@ -43,19 +54,18 @@
     <header id="home">
         <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="item active" style="background-image: url('/Photos/silhouette against flag.jpg')">
+                <div class="item active" style="background-image: url('/Photos/silhouette against flag.jpg');background-size:100%;">
                     <div class="caption">
                         <h1 class="animated fadeInLeftBig"></h1>
-                        <p class="animated fadeInRightBig">"You can't explain what it's like</br></br> to have done certain things unless your</br></br> audience has some experience with it."</p>
+                        <p class="animated fadeInRightBig">"You can't explain what it's like to have done certain things unless your  audience has some experience with it."</p>
                         <a data-scroll class="animated fadeInUpBig" href="#contact"></a>
                     </div>
                 </div>
-                <div class="item" style="background-image: url('../../Photos/Solid stars with dogtags in corner.jpg')">
+                <div class="item" style="background-image: url('../../Photos/Solid stars with dogtags in corner.jpg');background-size:100%;">
                     <div class="caption">
-                        <h1 class="animated fadeInLeftBig"><span><font color="red">VETCHAT.US </font></span></h1>
-                        <p class="animated fadeInRightBig">Reach out now to text </br> or chat anonymously with a </br> veteran buddy.</p>
+                        <p class="animated fadeInRightBig">Reach out now to text or chat anonymously with aveteran buddy.</p>
                         <a data-scroll class="btn btn-start animated fadeInUpBig" href="/home/contact">Contact a Veteran</a>
-                        <br/>
+                        <br />
                         <a data-scroll class="btn btn-start animated fadeInUpBig" href="#contact">Check out the Forum</a>
                     </div>
                 </div>
@@ -101,6 +111,43 @@
                 </div>*@<!--/#main-nav-->
     </header><!--/#home-->
 
+    <script>
+        function addReply(postId) {
+            $('#entry-content-' + postId + ' > h3.anchor').append('<h4>' + $('#entry-content-' + postId + '> input').val() + '</h4>');
+            $('#entry-content-' + postId + ' > h3.anchor').append('<p class="entry-content">' + $('#entry-content-' + postId + '> textarea').val() + '</p>');
+        }
+
+        //$(document).ready(function () {
+        //    if (screen.width < 768) {
+        //        var height = screen.height / 2;
+        //        height += 'px';
+        //        $('.item').css('height', height);
+        //    }
+        //});
+    </script>
+
+    <style>
+        .great-button {
+            background: #028FCC;
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            line-height: 40px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+
+        b1 {
+            display: none !important;
+        }
+    </style>
 
     <section id="contact">
         <div class="container">
@@ -133,15 +180,15 @@
                             <p>Yeah. It wasn't until I met my wife that I learned normal human fucking behavior and how love should actually work. I cut back on my partying and stopped fighting (still working on the drinking), but when my wife got pregnant I started to have REALLY LOW lows. I did some things I’m not proud of over there. I can't explain what it’s like to have done certain things unless the person listening has some experience with it. </p>
                             <h4>Jhamar</h4>
                             <p>The dirty secret about combat is coming home and walking around every day feeling like you're a bad person. And it’s hard to find people to connect with.  The life you get from being in an extreme situation... you get to know fear in a way that most other people don’t.</p>
-                          
-                            
-                            
-                                <h3><a>Reply</a></h3>
-                                <input class="name" type="text" placeholder="Name" style="width:100%;" />
-                                <br />
-                                <textarea class="message" type="text" placeholder="Reply to this forum post" style="width:100%;"></textarea>
-                                <div onclick="addReply(1);" class="entry-content-1-button" style="background:blue;width:100px;height:50px;"></div>
-                            
+
+
+                            <h3 class="anchor"></h3>
+                            <h3><a>Reply</a></h3>
+                            <input class="name" type="text" placeholder="Name" style="width:100%;" />
+                            <br />
+                            <textarea class="message" type="text" placeholder="Reply to this forum post" style="width:100%;"></textarea>
+                            <div onclick="addReply(1);" class="entry-content-1-button great-button">SUBMIT</div>
+
                         </div>
                     </div>
                 </div>
@@ -160,6 +207,60 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                             <h4>Jack</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <h3 class="anchor"></h3>
+                            <h3><a>Reply</a></h3>
+                            <input class="name" type="text" placeholder="Name" style="width:100%;" />
+                            <br />
+                            <textarea class="message" type="text" placeholder="Reply to this forum post" style="width:100%;"></textarea>
+                            <div onclick="addReply(2);" class="entry-content-1-button great-button">SUBMIT</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-sm-12 col-md-12 col-lg-12 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
+                        <div class="entry-header">
+                            <h3 onclick="$('#entry-content-3').toggle();"><a>Culver City meetup next weekend</a></h3>
+                            <span class="date">June 26, 2014</span>
+                        </div>
+                        <div id="entry-content-3" class="entry-content" style="display:none;">
+                            <h4>Billy</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <h4>Jack</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <h4>Billy</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <h4>Jack</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <h3 class="anchor"></h3>
+                            <h3><a>Reply</a></h3>
+                            <input class="name" type="text" placeholder="Name" style="width:100%;" />
+                            <br />
+                            <textarea class="message" type="text" placeholder="Reply to this forum post" style="width:100%;"></textarea>
+                            <div onclick="addReply(3);" class="entry-content-1-button great-button">SUBMIT</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-sm-12 col-md-12 col-lg-12 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
+                        <div class="entry-header">
+                            <h3 onclick="$('#entry-content-4').toggle();"><a>Culver City meetup next weekend</a></h3>
+                            <span class="date">June 26, 2014</span>
+                        </div>
+                        <div id="entry-content-4" class="entry-content" style="display:none;">
+                            <h4>Billy</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <h4>Jack</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <h4>Billy</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <h4>Jack</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <h3 class="anchor"></h3>
+                            <h3><a>Reply</a></h3>
+                            <input class="name" type="text" placeholder="Name" style="width:100%;" />
+                            <br />
+                            <textarea class="message" type="text" placeholder="Reply to this forum post" style="width:100%;"></textarea>
+                            <div onclick="addReply(4);" class="entry-content-1-button great-button">SUBMIT</div>
                         </div>
                     </div>
                 </div>
@@ -170,9 +271,6 @@
     <footer id="footer">
         <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
             <div class="container text-center">
-                <div class="footer-logo">
-                    <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
-                </div>
                 <div class="social-icons">
                     <ul>
                         <li><a class="envelope" href="#"><i class="fa fa-envelope"></i></a></li>
@@ -185,30 +283,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <p>&copy; 2014 Oxygen Theme.</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="pull-right">Designed by <a href="http://www.themeum.com/">Themeum</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </footer>
-
-    <script type="text/javascript" src="/Scripts/jquery.js"></script>
-    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script type="text/javascript" src="/Scripts/jquery.inview.min.js"></script>
-    <script type="text/javascript" src="/Scripts/wow.min.js"></script>
-    <script type="text/javascript" src="/Scripts/mousescroll.js"></script>
-    <script type="text/javascript" src="/Scripts/smoothscroll.js"></script>
-    <script type="text/javascript" src="/Scripts/jquery.countTo.js"></script>
-    <script type="text/javascript" src="/Scripts/lightbox.min.js"></script>
-    <script type="text/javascript" src="/Scripts/main.js"></script>
 
 </body>
 </html>
