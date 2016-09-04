@@ -10,6 +10,12 @@
     </div>
 </div>
 
+<style>
+    #tagLine {
+        min-height: 50px;
+    }
+</style>
+
 @section Scripts {
     <script>
         $(document).ready(function () {
@@ -64,6 +70,7 @@
             $mentor.find('#branch').text(mentor.Branch);
             $mentor.find('#rank').text(mentor.Rank);
             $mentor.find('#yearsServed').text(mentor.YearsServed + " Years Served");
+            $mentor.find('#tagLine').html('<em>"' + mentor.TagLine + '"</em>');
             if (mentor.IsActive == 1) {
                 $mentor.find('#status').text("Active");
             } else {
@@ -108,12 +115,13 @@
                 <div style="text-align:center;">
                     <img style="width:70%;margin-top:10%;" alt="image" class="img-circle" id="randomPic" src="/Themes/Inspinia_MVC5/Images/a6.jpg">
                     <h3 class="m-b-xs" id="mentorName"><strong>Janet Carton</strong></h3>
+                    <h4 class="m-b-xs" id="tagLine"><em>Janet Carton</em></h4>
+                    <strong id="branch">Air Force</strong><br>
+                    <div id="status">Retired</div>
+                    <div id="yearsServed">15 Years Served</div>
                     <div class="font-bold age">23</div>
-                    <address class="m-t-md">
-                        <strong id="branch">Air Force</strong><br>
+                    <address class="m-t-md">                        
                         <div id="rank">Sergeant</div>
-                        <div id="yearsServed">15 Years Served</div>
-                        <div id="status">Retired</div>
                         <div id="currentOccupation">Chef</div>
                         <div id="location">San Diego, CA</div><br>
                     </address>

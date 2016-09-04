@@ -23,10 +23,49 @@ textarea {
     max-width: 280px;
 }
 
-.padding-30{
+.padding-30 {
     padding-bottom: 30px;
 }
 
 .border-none > div > input {
     border: none;
+}
+
+#tagLine {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#js-toProfile {
+    width: 50%;
+    height: 50px;
+    line-height: 37px;
+    font-size: 20px;
+}
+
+h2 {
+    font-family: Montserrat;
+    text-transform: uppercase;
+}
+
+.caption {
+    width: 33%;
+    margin: 0 auto;
+}
+
+@media (max-width:950px) {
+    .caption {
+        width: 50%;
+    }
+}
+
+
+@media (max-width:600px) {
+    .caption {
+        width: 75%;
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif
 }

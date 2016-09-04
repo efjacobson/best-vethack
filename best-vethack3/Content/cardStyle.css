@@ -3,16 +3,17 @@
 
 /* CONTACTS */
 .contact-box {
-  background-color: #E3E3E3;
-  border: 1px solid #e7eaec;
+  background-color: rgba(1, 81, 122, .9);
   padding: 20px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  color: white;
+  border-radius: 20px;
+}
 
 .contact-box > a {
   color: inherit; }
 
 .contact-box.center-version {
-  border: 1px solid #e7eaec;
   padding: 0; }
 
 .contact-box.center-version > a {
@@ -32,8 +33,6 @@
 
 .contact-box .contact-box-footer {
   text-align: center;
-  background-color: #ffffff;
-  border-top: 1px solid #e7eaec;
   padding: 15px 20px; }
 
 /* WRAPPERS */

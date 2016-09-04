@@ -3,91 +3,103 @@
 }
 
 <h2>Details</h2>
+<script src="/Scripts/jquery-1.10.2.js"></script>
 
+<script>
+    $(document).ready(function () {
+        $(document.body).css('background-image', 'url("/Photos/image.jpg")');
+        $(document.body).css('background-repeat', 'no-repeat');
+        $(document.body).css('background-size', 'cover');
+    });
+</script>
 
-
-<form id="currentUserProfile">
-    <div class="form-group row">
-        <label for="example-text-input" class="col-xs-2 col-form-label">First Name</label>
-        <div class="col-xs-10">
-            <input class="form-control" id="firstName" name="firstName" type="text" placeholder="Enter your first name...">
+<div class="col-xs-8 col-xs-offset-2 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style="background:rgba(1, 81, 122, .9);color:white;padding:30px;border-radius:20px">
+    <form id="currentUserProfile">
+        <div class="form-group row">
+            <label for="example-text-input" class="col-xs-2 col-form-label">First Name</label>
+            <div class="col-xs-10">
+                <input class="form-control" id="firstName" name="firstName" type="text" placeholder="Enter your first name...">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-search-input" class="col-xs-2 col-form-label">Last name</label>
-        <div class="col-xs-10">
-            <input class="form-control" id="lastName" name="lastName" type="text" placeholder="Enter your last name...">
+        <div class="form-group row">
+            <label for="example-search-input" class="col-xs-2 col-form-label">Last name</label>
+            <div class="col-xs-10">
+                <input class="form-control" id="lastName" name="lastName" type="text" placeholder="Enter your last name...">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-email-input" class="col-xs-2 col-form-label">Phone Number</label>
-        <div class="col-xs-10">
-            <input class="form-control" id="phoneNumber" name="phoneNumber" type="tel" placeholder="Enter your phone number...">
+        <div class="form-group row">
+            <label for="example-email-input" class="col-xs-2 col-form-label">Phone Number</label>
+            <div class="col-xs-10">
+                <input class="form-control" id="phoneNumber" name="phoneNumber" type="tel" placeholder="Enter your phone number...">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-email-input" class="col-xs-2 col-form-label">Age</label>
-        <div class="col-xs-10">
-            <input class="form-control" id="age" name="age" type="number" placeholder="Enter your age...">
+        <div class="form-group row">
+            <label for="example-email-input" class="col-xs-2 col-form-label">Age</label>
+            <div class="col-xs-10">
+                <input class="form-control" id="age" name="age" type="number" placeholder="Enter your age...">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-url-input" class="col-xs-2 col-form-label">Active</label>
-        <div class="col-xs-10">
-            <input class="form-control" id="isActive" name="isActive" type="number" placeholder="1 for active, 0 for inactive...">
+        <div class="form-group row">
+            <label for="example-url-input" class="col-xs-2 col-form-label">Active</label>
+            <div class="col-xs-10">
+                <input class="form-control" id="isActive" name="isActive" type="number" placeholder="1 for active, 0 for inactive...">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-tel-input" class="col-xs-2 col-form-label">Branch</label>
-        <div class="col-xs-10">
-            <input class="form-control" id="branch" name="branch" type="text" placeholder="Enter your branch...">
+        <div class="form-group row">
+            <label for="example-tel-input" class="col-xs-2 col-form-label">Branch</label>
+            <div class="col-xs-10">
+                <input class="form-control" id="branch" name="branch" type="text" placeholder="Enter your branch...">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-password-input" class="col-xs-2 col-form-label">Rank</label>
-        <div class="col-xs-10">
-            <input class="form-control" id="rank" name="rank" type="text" placeholder="Enter your rank...">
+        <div class="form-group row">
+            <label for="example-password-input" class="col-xs-2 col-form-label">Rank</label>
+            <div class="col-xs-10">
+                <input class="form-control" id="rank" name="rank" type="text" placeholder="Enter your rank...">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-number-input" class="col-xs-2 col-form-label">Years Served</label>
-        <div class="col-xs-10">
-            <input class="form-control" id="yearsServed" name="yearsServed" type="number" placeholder="Enter your years served...">
+        <div class="form-group row">
+            <label for="example-number-input" class="col-xs-2 col-form-label">Years Served</label>
+            <div class="col-xs-10">
+                <input class="form-control" id="yearsServed" name="yearsServed" type="number" placeholder="Enter your years served...">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Location</label>
-        <div class="col-xs-10">
-            <input class="form-control" id="location" name="location" type="text" placeholder="Enter your location...">
+        <div class="form-group row">
+            <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Location</label>
+            <div class="col-xs-10">
+                <input class="form-control" id="location" name="location" type="text" placeholder="Enter your location...">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-date-input" style="font-size:12px;" class="col-xs-2 col-form-label">Current Occupation</label>
-        <div class="col-xs-10">
-            <input class="form-control" id="currentOccupation" name="currentOccupation" type="text" placeholder="Enter your occupation...">
+        <div class="form-group row">
+            <label for="example-date-input" style="font-size:12px;" class="col-xs-2 col-form-label">Current Occupation</label>
+            <div class="col-xs-10">
+                <input class="form-control" id="currentOccupation" name="currentOccupation" type="text" placeholder="Enter your occupation...">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-month-input" class="col-xs-2 col-form-label">Tagline</label>
-        <div class="col-xs-10">
-            <input class="form-control" id="tagline" name="tagline" type="text" placeholder="Enter your tagline...">
+        <div class="form-group row">
+            <label for="example-month-input" class="col-xs-2 col-form-label">Tagline</label>
+            <div class="col-xs-10">
+                <input class="form-control" id="tagline" name="tagline" type="text" placeholder="Enter your tagline...">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-week-input" class="col-xs-2 col-form-label">Bio</label>
-        <div class="col-xs-10">
-            <input class="form-control" id="bio" name="bio" type="text" style="height:250px;" placeholder="Enter a short bio...">
+        <div class="form-group row">
+            <label for="example-week-input" class="col-xs-2 col-form-label">Bio</label>
+            <div class="col-xs-10">
+                <input class="form-control" id="bio" name="bio" type="text" style="height:250px;" placeholder="Enter a short bio...">
+            </div>
         </div>
-    </div>
-
-    <button type="submit" class="updateUser">Submit</button>
-</form>
+        <div class="form-group row">
+            <div class="col-xs-10 col-xs-offset-2">
+                <button type="submit" class="btn btn-lg btn-success updateUser">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
 
 @section Scripts {
-    <script src="~/Scripts/jquery.validate.js"></script>  
+    <script src="~/Scripts/jquery.validate.js"></script>
     <script src="~/Scripts/vetchat.js"></script>
     <script src="~/Scripts/vetchat.service.profile.js"></script>
-    
+
     <script type="text/javascript">
 
 
@@ -115,7 +127,7 @@
                         minlength: 2,
                     },
                     phoneNumber: {
-                        required: true,  
+                        required: true,
                     },
                     age: {
                         required: true,
@@ -196,24 +208,29 @@
 
         vetchat.page.handlers.createUser = function (event) {
             event.preventDefault();
-            var userInfo = {};
-            userInfo.FirstName = $("#firstName").val();
-            userInfo.LastName = $("#lastName").val();
-            userInfo.PhoneNumber = $("#phoneNumber").val();
-            userInfo.Age = $("#age").val();
-            userInfo.IsActive = $("#isActive").val();
-            userInfo.Branch = $("#branch").val();
-            userInfo.Rank = $("#rank").val();
-            userInfo.YearsServed = $("#yearsServed").val();
-            userInfo.Location = $("#location").val();
-            userInfo.CurrentOccupation = $("#currentOccupation").val();
-            userInfo.TagLine = $("#tagline").val();
-            userInfo.Bio = $("#bio").val();
+            if (!$("#firstName").val() || !$("#lastName").val() || !$("#phoneNumber").val() || !$("#age").val() || !$("#isActive").val() || !$("#branch").val() || !$("#rank").val() || !$("#yearsServed").val() || !$("#location").val() || !$("#currentOccupation").val() || !$("#tagline").val() || !$("#bio").val()) {
+                alert('Please fill out all fields');
+            } else {
+                var userInfo = {};
+                userInfo.FirstName = $("#firstName").val();
+                userInfo.LastName = $("#lastName").val();
+                userInfo.PhoneNumber = $("#phoneNumber").val();
+                userInfo.Age = $("#age").val();
+                userInfo.IsActive = $("#isActive").val();
+                userInfo.Branch = $("#branch").val();
+                userInfo.Rank = $("#rank").val();
+                userInfo.YearsServed = $("#yearsServed").val();
+                userInfo.Location = $("#location").val();
+                userInfo.CurrentOccupation = $("#currentOccupation").val();
+                userInfo.TagLine = $("#tagline").val();
+                userInfo.Bio = $("#bio").val();
 
-            console.log(userInfo);
-            vetchat.services.profile.create(userInfo, vetchat.page.handlers.buddyCreateSuccess, vetchat.page.handlers.buddyCreateError);
+                console.log(userInfo);
+                vetchat.services.profile.create(userInfo, vetchat.page.handlers.buddyCreateSuccess, vetchat.page.handlers.buddyCreateError);
 
-            return userInfo;
+                return userInfo;
+
+            }
 
         };
 
