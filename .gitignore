@@ -1,5 +1,5 @@
 # begin manually added ignores
-best-vethack/Web.config
+/best-vethack3/ConnectionStrings.config
 # end manually added ignores
 
 ## Ignore Visual Studio temporary files, build results, and
