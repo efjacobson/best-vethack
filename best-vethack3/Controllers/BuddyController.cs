@@ -19,5 +19,11 @@ namespace best_vethack3.Controllers
         {
             return View();
         }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }
