@@ -465,6 +465,7 @@
     <Content Include="Views\BestVetHack Carousel Fotorama.html" />
     <Content Include="Views\Forum\Index.cshtml" />
     <Content Include="Views\Buddy\Find.cshtml" />
+    <Content Include="Views\Buddy\Profile.cshtml" />
     <None Include="Views\Home\index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -510,7 +511,6 @@
     <Content Include="Theme - Oxygen\template\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Theme - Oxygen\template\sendemail.php" />
     <Content Include="Views\Shared\VetChat_Landing_page.cshtml" />
-    <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Home\MessagingTestView.cshtml" />
     <Content Include="Views\Profile\Create.cshtml" />
   </ItemGroup>

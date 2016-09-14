@@ -12,5 +12,12 @@ namespace best_vethack3.Controllers
         {
             return View();
         }
+
+        // GET: Profile
+        [Route("{id:int}")]
+        public ActionResult Profile(int id = 0)
+        {
+            return View();
+        }
     }
 }
