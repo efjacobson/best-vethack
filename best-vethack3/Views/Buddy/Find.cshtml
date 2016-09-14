@@ -65,7 +65,7 @@
 
         function populateTemplate(mentor) {
             var $mentor = $($('#mentorsTemplate').html());
-            $mentor.find('#js-toProfile').attr('href', '/profile/index/' + mentor.Id);
+            $mentor.find('#js-toProfile').attr('href', '/buddy/profile/' + mentor.Id);
             $mentor.find('#mentorName').text(mentor.FirstName + " " + mentor.LastName);
             $mentor.find('.age').text(mentor.Age + " Years Old");
             $mentor.find('#branch').text(mentor.Branch);
