@@ -237,6 +237,7 @@
     <Compile Include="Controllers\Api\TwilioApiMessaging.cs" />
     <Compile Include="Controllers\Api\UserApiController.cs" />
     <Compile Include="Controllers\ForumController.cs" />
+    <Compile Include="Controllers\BuddyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -463,6 +464,7 @@
     <Content Include="VetChat Landing page.aspx" />
     <Content Include="Views\BestVetHack Carousel Fotorama.html" />
     <Content Include="Views\Forum\Index.cshtml" />
+    <Content Include="Views\Buddy\Find.cshtml" />
     <None Include="Views\Home\index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -476,7 +478,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index2.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
